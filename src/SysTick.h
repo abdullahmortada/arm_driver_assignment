@@ -2,6 +2,12 @@
 #define SYSTICK_H_
 
 #include "std_types.h" 
+#include "tm4c123gh6pm_registers.h"
+
+#define SYSTICK_CTRL_COUNT_MASK (1<<16)
+#define SYSTICK_CTRL_ENABLE_MASK 1
+
+extern volatile void (*SysTick_CallBack)(void);
 
 void SysTick_Init(uint16 a_TimeInMilliSeconds);
 
