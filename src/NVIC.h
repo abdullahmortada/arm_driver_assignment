@@ -17,6 +17,7 @@
  *                                Inclusions                                   *
  *******************************************************************************/
 #include "std_types.h"
+#include "tm4c123gh6pm_registers.h"
 
 /*******************************************************************************
  *                           Preprocessor Definitions                          *
@@ -62,6 +63,13 @@
 /*******************************************************************************
  *                           Data Types Declarations                           *
  *******************************************************************************/
+
+#define NVIC_PRI_REG    ((volatile uint32 *)0xE000E400)
+#define NVIC_EN_REG     ((volatile uint32 *)0xE000E100)
+#define NVIC_DIS_REG    ((volatile uint32 *)0xE000E180)
+
+#define NVIC_SYSTEM_PRI_REG      ((volatile uint32 *)0xE000ED18)
+
 typedef uint8 NVIC_IRQType;
 
 typedef uint8 NVIC_IRQPriorityType;
